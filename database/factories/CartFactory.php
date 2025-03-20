@@ -18,7 +18,7 @@ class CartFactory extends Factory
     public function definition(): array
     {
         return [
-            'quantity' => $this->faker->randomInt(),
+            'quantity' => $this->faker->randomNumber(),
             'experience_id' => Experience::all()->random()->id,
         ];
     }
