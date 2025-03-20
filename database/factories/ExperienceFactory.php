@@ -26,7 +26,7 @@ class ExperienceFactory extends Factory
             'image' => $this->faker->imageUrl(360, 360),
             'format' => $this->faker->randomElement(['presencial', 'online', 'hibrido']),
             'description' => $this->faker->text(),
-            'company' => Company::all()->random()->id,
+            'company_id' => Company::all()->random()->id,
         ];
     }
 }

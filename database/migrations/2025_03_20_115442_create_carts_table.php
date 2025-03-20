@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('carts', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('experience_id');
+            $table->unsignedBigInteger('experience_id')->unique();
             $table->integer('quantity');
             $table->timestamps();
             $table->foreign('experience_id')->references('id')->on('experiences')->onDelete('cascade')->onUpdate('cascade');
