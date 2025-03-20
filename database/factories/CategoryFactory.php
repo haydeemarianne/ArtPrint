@@ -18,7 +18,7 @@ class CategoryFactory extends Factory
     {
         $categories = ['ceramica' , 'escritura' , 'acuarela' , 'cocina' , 'fotografia' , 'cosmetica'];
         return [
-            'name' => $this->faker->unique()->randomElement($categories);
+            'name' => $this->faker->unique()->randomElement($categories),
         ];
     }
 }

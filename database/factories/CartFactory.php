@@ -17,9 +17,10 @@ class CartFactory extends Factory
      */
     public function definition(): array
     {
+        $experiences = Experience::pluck('id');
         return [
             'quantity' => $this->faker->randomNumber(),
-            'experience_id' => Experience::all()->random()->id,
+            'experience_id' => $this->faker->unique()->randomElement($experiences),
         ];
     }
 }
