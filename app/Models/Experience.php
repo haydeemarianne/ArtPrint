@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Experience extends Model
 {
     use HasFactory;
-    protected $fillable = ['title', 'category', 'location_id', 'price', 'image', 'format', 'description', 'company'];
+    protected $fillable = ['title', 'category_id', 'location_id', 'price', 'image', 'format', 'description', 'company_id'];
     public function location(): BelongsTo
     {
         return $this->belongsTo(Location::class, 'location_id');
@@ -20,4 +20,15 @@ class Experience extends Model
     {
         return $this->hasMany(Cart::class, 'experience_id');
     }
+
+    public function category():BelongsTo
+    {
+        return $this->belongsTo(Category::class, 'category_id');
+    }
+
+    public function company():BelongsTo
+    {
+        return $this->belongsTo(company::class, 'company_id');
+    }
+
 }
